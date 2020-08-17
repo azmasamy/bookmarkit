@@ -25,6 +25,7 @@ class BookCard extends StatelessWidget {
         );
       },
       child: Card(
+
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Row(
@@ -41,9 +42,13 @@ class BookCard extends StatelessWidget {
   }
 
   Widget _buildBookTitle(String title) {
+
+    String formattedTitle = formatTitle(title);
+
     return Text(
-      title,
+      formattedTitle,
       style: TextStyle(
+        fontWeight: FontWeight.bold,
         fontSize: 22,
         letterSpacing: 2,
       ),
@@ -51,8 +56,11 @@ class BookCard extends StatelessWidget {
   }
 
   Widget _buildBookDescription(String description) {
+
+    String formattedDescription = formatDescription(description);
+
     return Text(
-      description,
+      formattedDescription,
       style: TextStyle(
         color: Colors.grey,
         fontSize: 15,
@@ -68,7 +76,6 @@ class BookCard extends StatelessWidget {
 
     return Expanded(
       child: Container(
-        height: 120,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -96,10 +103,44 @@ class BookCard extends StatelessWidget {
   Widget _buildBookImage(String image) {
     return ClipRRect(
         borderRadius: BorderRadius.circular(5.0),
-        child: Image.asset(
-          image,
-          height: 120,
-          width: 80,
+        child: Visibility(
+          visible: isLoaded(image),
+          replacement: Container(
+            height: 120,
+            width: 80,
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          ),
+          child: Image.network(
+            image,
+            height: 120,
+            width: 80,
+          ),
         ));
+  }
+
+  String formatDescription(String description) {
+    if(description == null) {
+      return "(MISSING DESCRIPTION)";
+    } else if(description.length >= 163) {
+      return description.substring(0, 163) + "...";
+    } else {
+      return description;
+    }
+  }
+
+  bool isLoaded(String strProperty){
+    return (strProperty == "") ? false : true;
+  }
+
+  String formatTitle(String title) {
+    if(title == null) {
+      return "(MISSING TITLE)";
+    } else if(title.length >= 50) {
+      return title.substring(0, 50) + "...";
+    } else {
+      return title;
+    }
   }
 }

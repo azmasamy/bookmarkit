@@ -13,4 +13,8 @@ class Book {
   String get image => _image;
   String get title => _title;
   String get description => _description;
+
+  factory Book.fromJson(Map<String, dynamic> json) {
+    return Book(image: json['urlToImage'], title: json['author'], description: json['description']);
+  }
 }
