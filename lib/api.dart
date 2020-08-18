@@ -4,14 +4,11 @@ import 'book.dart';
 
 class APIController {
 
-  Future<http.Response> fetchAlbum() {
-    return http.get('https://jsonplaceholder.typicode.com/albums/1');
-  }
+  var key = "b848ea66290b44faa3a331705b2d8703";
+  var url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-07-18&sortBy=publishedAt&apiKey=";
 
   Future<List> fetchData() async {
-    var key = "b848ea66290b44faa3a331705b2d8703";
-    var url = 'http://newsapi.org/v2/everything?q=bitcoin&from=2020-07-17&sortBy=publishedAt&apiKey=b848ea66290b44faa3a331705b2d8703';
-    var response = await http.get(url);
+    var response = await http.get(url + key);
 
 //    print('Response status: ${response.statusCode}');
 //    print('Response body: ${response.body}');

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Book {
   String _image;
   String _title;

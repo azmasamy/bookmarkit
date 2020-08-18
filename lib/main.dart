@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'book_list_screen.dart';
+import 'package:bookmarkit/screens/loading_screen.dart';
 
 void main() {
 
@@ -14,6 +14,6 @@ void main() {
       splashColor: Colors.cyan,
     ),
     debugShowCheckedModeBanner: false,
-    home: BookListScreen(),
+    home: Loading(),
   ));
 }

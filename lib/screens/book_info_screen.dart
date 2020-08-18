@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'book.dart';
+import '../book.dart';
 class BookInfoScreen extends StatelessWidget{
 
   final Book _book;
@@ -22,7 +22,7 @@ class BookInfoScreen extends StatelessWidget{
               ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),
                   child: Image.network(
-                    _book.image,
+                    checkImageUrl(_book.image),
                     height: 240,
                     width: 160,
                   )),
@@ -69,6 +69,14 @@ class BookInfoScreen extends StatelessWidget{
       return "(MISSING TITLE)";
     } else {
       return title;
+    }
+  }
+
+  String checkImageUrl(String url) {
+    if(url == null) {
+      return 'https://static.thenounproject.com/png/583402-200.png';
+    } else {
+      return url;
     }
   }
 }

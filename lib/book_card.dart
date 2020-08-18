@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'book.dart';
-import 'book_info_screen.dart';
+import 'screens/book_info_screen.dart';
 
 class BookCard extends StatelessWidget {
   final Book _book;
@@ -25,7 +25,6 @@ class BookCard extends StatelessWidget {
         );
       },
       child: Card(
-
         child: Padding(
           padding: EdgeInsets.all(8.0),
           child: Row(
@@ -42,11 +41,8 @@ class BookCard extends StatelessWidget {
   }
 
   Widget _buildBookTitle(String title) {
-
-    String formattedTitle = formatTitle(title);
-
     return Text(
-      formattedTitle,
+      formatTitle(title),
       style: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 22,
@@ -56,11 +52,8 @@ class BookCard extends StatelessWidget {
   }
 
   Widget _buildBookDescription(String description) {
-
-    String formattedDescription = formatDescription(description);
-
     return Text(
-      formattedDescription,
+      formatDescription(description),
       style: TextStyle(
         color: Colors.grey,
         fontSize: 15,
@@ -113,7 +106,7 @@ class BookCard extends StatelessWidget {
             ),
           ),
           child: Image.network(
-            image,
+            checkImageUrl(image),
             height: 120,
             width: 80,
           ),
@@ -121,26 +114,34 @@ class BookCard extends StatelessWidget {
   }
 
   String formatDescription(String description) {
-    if(description == null) {
+    if (description == null) {
       return "(MISSING DESCRIPTION)";
-    } else if(description.length >= 163) {
+    } else if (description.length >= 163) {
       return description.substring(0, 163) + "...";
     } else {
       return description;
     }
   }
 
-  bool isLoaded(String strProperty){
+  bool isLoaded(String strProperty) {
     return (strProperty == "") ? false : true;
   }
 
   String formatTitle(String title) {
-    if(title == null) {
+    if (title == null) {
       return "(MISSING TITLE)";
-    } else if(title.length >= 50) {
+    } else if (title.length >= 50) {
       return title.substring(0, 50) + "...";
     } else {
       return title;
+    }
+  }
+
+  String checkImageUrl(String url) {
+    if(url == null) {
+      return 'https://static.thenounproject.com/png/583402-200.png';
+    } else {
+      return url;
     }
   }
 }
