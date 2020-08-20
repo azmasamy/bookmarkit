@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../Models/book_card.dart';
+import 'widgets/bookmark_card.dart';
 
-class BookListScreen extends StatelessWidget {
+class BookmarkListScreen extends StatelessWidget {
 
   final List _bookmarks;
-  BookListScreen({List bookmarksList})
+  BookmarkListScreen({List bookmarksList})
       : _bookmarks = bookmarksList;
 
 
@@ -14,7 +14,7 @@ class BookListScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Book List",
+          "Bookmarkit List",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -22,7 +22,7 @@ class BookListScreen extends StatelessWidget {
         itemCount: _bookmarks.length,
         padding: const EdgeInsets.all(8),
         itemBuilder: (context, index) {
-          return BookCard(book: _bookmarks[index],);
+          return BookmarkCard(book: _bookmarks[index],);
         },
       ),
     );

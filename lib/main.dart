@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:bookmarkit/screens/loading_screen.dart';
+import 'package:bookmarkit/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:bookmarkit/Models/book_list.dart';
+import 'package:bookmarkit/business/bookmark_list.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,6 +15,6 @@ void main() {
       splashColor: Colors.cyan,
     ),
     debugShowCheckedModeBanner: false,
-    home: ChangeNotifierProvider(create: (_) => BookList(), child: LoadingScreen()),
+    home: ChangeNotifierProvider(create: (_) => BookmarkList(), child: SplashScreen()),
   ));
 }

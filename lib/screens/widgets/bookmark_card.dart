@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'book.dart';
-import '../screens/book_info_screen.dart';
+import '../../models/bookmark.dart';
+import '../bookmark_info_screen.dart';
 
-class BookCard extends StatelessWidget {
-  final Book _book;
+class BookmarkCard extends StatelessWidget {
+  final Bookmark _bookmark;
 
-  BookCard({Book book}) : _book = book;
+  BookmarkCard({Bookmark book}) : _bookmark = book;
 
   @override
   Widget build(BuildContext context) {
     Widget _bookTitleDescription =
-        _buildBookTitleDescription(_book.title, _book.description);
+        _buildBookTitleDescription(_bookmark.title, _bookmark.description);
     Widget _emptyVerticalSpace = _buildEmptyVerticalSpace();
-    Widget _bookImage = _buildBookImage(_book.image);
+    Widget _bookImage = _buildBookImage(_bookmark.image);
 
     return GestureDetector(
       onTap: () {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => BookInfoScreen(
-                    book: _book,
+              builder: (context) => BookmarkInfoScreen(
+                    bookmark: _bookmark,
                   )),
         );
       },

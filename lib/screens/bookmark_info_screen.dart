@@ -1,18 +1,18 @@
+import 'package:bookmarkit/models/bookmark.dart';
 import 'package:flutter/material.dart';
-import '../Models/book.dart';
-class BookInfoScreen extends StatelessWidget{
 
-  final Book _book;
+class BookmarkInfoScreen extends StatelessWidget{
+  final Bookmark _bookmark;
 
-  BookInfoScreen({Book book})
-      : _book = book;
+  BookmarkInfoScreen({Bookmark bookmark})
+      : _bookmark = bookmark;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Book Info", style: TextStyle(color: Colors.white),),
+        title: Text("Bookmarkit Info", style: TextStyle(color: Colors.white),),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -22,7 +22,7 @@ class BookInfoScreen extends StatelessWidget{
               ClipRRect(
                   borderRadius: BorderRadius.circular(5.0),
                   child: Image.network(
-                    checkImageUrl(_book.image),
+                    checkImageUrl(_bookmark.image),
                     height: 240,
                     width: 160,
                   )),
@@ -31,7 +31,7 @@ class BookInfoScreen extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    formatTitle(_book.title),
+                    formatTitle(_bookmark.title),
                     style: TextStyle(
                         fontSize: 22,
                         letterSpacing: 2
@@ -39,7 +39,7 @@ class BookInfoScreen extends StatelessWidget{
                   ),
                   SizedBox(height: 20,),
                   Text(
-                    formatDescription(_book.description),
+                    formatDescription(_bookmark.description),
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 15,
