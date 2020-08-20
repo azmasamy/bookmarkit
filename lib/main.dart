@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:bookmarkit/screens/loading_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:bookmarkit/Models/book_list.dart';
 
 void main() {
-
   runApp(MaterialApp(
-    theme:  ThemeData(
+    theme: ThemeData(
       brightness: Brightness.light,
       accentColor: Colors.deepPurpleAccent,
       primaryColor: Colors.deepPurple,
@@ -14,6 +15,6 @@ void main() {
       splashColor: Colors.cyan,
     ),
     debugShowCheckedModeBanner: false,
-    home: Loading(),
+    home: ChangeNotifierProvider(create: (_) => BookList(), child: LoadingScreen()),
   ));
 }

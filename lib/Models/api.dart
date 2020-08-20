@@ -5,7 +5,7 @@ import 'book.dart';
 class APIController {
 
   var key = "b848ea66290b44faa3a331705b2d8703";
-  var url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-07-18&sortBy=publishedAt&apiKey=";
+  var url = "http://newsapi.org/v2/everything?q=bitcoin&from=2020-07-20&sortBy=publishedAt&apiKey=";
 
   Future<List> fetchData() async {
     var response = await http.get(url + key);
