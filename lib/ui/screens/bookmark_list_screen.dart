@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/bookmark_card.dart';
+import '../widgets/bookmark_card.dart';
 
 class BookmarkListScreen extends StatelessWidget {
 

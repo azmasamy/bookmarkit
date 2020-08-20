@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:bookmarkit/models/constants.dart';
+import 'package:bookmarkit/resources/constants.dart';
 import 'package:http/http.dart' as http;
-import 'bookmark.dart';
+import '../models/bookmark.dart';
 
 class BookmarkAPI {
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/bookmark.dart';
-import '../bookmark_info_screen.dart';
+import '../screens/bookmark_info_screen.dart';
 
 class BookmarkCard extends StatelessWidget {
   final Bookmark _bookmark;

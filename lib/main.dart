@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:bookmarkit/screens/splash_screen.dart';
+import 'file:///D:/Education/Medipol/1.2/Internship_II/Flutter_Projects/bookmarkit_provider/lib/ui/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:bookmarkit/business/bookmark_list.dart';
+import 'package:bookmarkit/blocs/bookmark_list.dart';
 
 void main() {
   runApp(MaterialApp(
