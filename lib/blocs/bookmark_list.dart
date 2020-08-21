@@ -1,6 +1,7 @@
-import 'file:///D:/Education/Medipol/1.2/Internship_II/Flutter_Projects/bookmarkit_provider/lib/resources/bookmark_api.dart';
-import 'package:flutter/material.dart';
 import '../models/bookmark.dart';
+import 'package:flutter/material.dart';
+import 'package:bookmarkit/models/bookmark.dart';
+import 'package:bookmarkit/resources/bookmark_api.dart';
 
 
 enum apiStateEnum { notCalled, called }
