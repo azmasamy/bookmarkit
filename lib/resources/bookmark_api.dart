@@ -5,7 +5,7 @@ import 'package:bookmarkit/models/bookmark.dart';
 
 class BookmarkAPI {
 
-  var query = "&q=bitcoin&from=2020-07-21&sortBy=publishedAt";
+  var query = "&q=bitcoin&from=2020-08-21&sortBy=publishedAt";
 
   Future<List> fetchData() async {
 

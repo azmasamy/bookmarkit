@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/Education/Medipol/1.2/Internship_II/Flutter_Projects/bookmarkit_provider/lib/ui/screens/splash_screen.dart';
-import 'package:provider/provider.dart';
-import 'package:bookmarkit/blocs/bookmark_list.dart';
+import 'package:bookmarkit/ui/screens/splash_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,6 +13,6 @@ void main() {
       splashColor: Colors.cyan,
     ),
     debugShowCheckedModeBanner: false,
-    home: ChangeNotifierProvider(create: (_) => BookmarkList(), child: SplashScreen()),
+    home: SplashScreen(),
   ));
 }
